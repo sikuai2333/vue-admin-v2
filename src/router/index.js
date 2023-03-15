@@ -4,14 +4,13 @@ import Home from "../components/Home.vue"
 
 Vue.use(Router)
 
-
 export default new Router({
-    router:[
-        {
-            path:'/home',
-            comment: Home,
-
-        },
-    ],
-    mode: 'history'
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home,
+    },
+  ],
+  mode: 'history'
 })

@@ -1,13 +1,18 @@
 <template>
   <div id="app">
     <!-- 下面是路由出口，配置了才能使用router -->
+    <Home/>
   <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Home from "@/components/Home.vue"
 
 export default {
+  components: {
+    Home,
+  }
 }
 </script>
 
