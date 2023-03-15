@@ -4,6 +4,7 @@
     <el-button>hello</el-button>
     <el-button type="primary">hello</el-button>
     <el-button type="primary">hello</el-button>
+    <i class="fa fa-users"></i>
   </div>
 </template>
 
