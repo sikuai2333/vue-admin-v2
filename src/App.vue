@@ -1,17 +1,13 @@
 <template>
   <div id="app">
-    <HelloWorld/>
+    <!-- 下面是路由出口，配置了才能使用router -->
+  <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/Home.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
 }
 </script>
 
