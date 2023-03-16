@@ -32,6 +32,7 @@
 
 import { nameRule, passRule } from '../utils/vaildate.js'
 import { setToken } from '../utils/setToken.js'
+import { login } from '../api/api.js'
 import axios from 'axios';
 import https from 'https';
 const instance = axios.create({
@@ -60,12 +61,26 @@ export default {
         if (valid) {
           // 校验通过
           console.log(this.form)
-          // 此处调用封装的axios
-          this.service.post('/login', this.form)
-          .then((res) => {
-            console.log(res.data)
+          // 此处调用封装的axios，但是又封装到api.js了
+          // this.service.post('/login', this.form)
+          // .then((res) => {
+          //   if (res.data.status === 200){
+          //     setToken('username',res.data.username)
+          //     setToken('token',res.data.token)
+          //     this.$message({message: res.data.message,type: 'success'})
+          //     this.$router.push('/home')
+          //   }
+          // })
+          // 此处调用封装的api.js
+          login(this.form).then(res => {
+            if (res.data.status === 200) {
+              setToken('username', res.data.username)
+              setToken('token', res.data.token)
+              this.$message({ message: res.data.message, type: 'success' })
+              this.$router.push('/home')
+            }
           })
-        }else{
+        } else {
           console.error(this.form)
         }
       })
