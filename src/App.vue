@@ -1,17 +1,25 @@
+<!--
+ * @Descripttion: 
+ * @version: 39
+ * @Author: sikuai
+ * @Date: 2023-03-16 00:12:13
+ * @LastEditors: sikuai
+ * @LastEditTime: 2023-03-16 00:18:58
+-->
 <template>
   <div id="app">
     <!-- 下面是路由出口，配置了才能使用router -->
-    <Home/>
+    <!-- <Home/> -->
   <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Home from "@/components/Home.vue"
+// import Home from "@/components/Home.vue"
 
 export default {
   components: {
-    Home,
+    // Home,
   }
 }
 </script>
