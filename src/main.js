@@ -6,11 +6,14 @@ import 'element-ui/lib/theme-chalk/index.css'
 // 导入font-awesome
 import 'font-awesome/css/font-awesome.min.css'
 // 导入axios
-import axios from 'axios'
+import axios from 'axios';
 // 导入router
 import router from './router'
+// 导入service
+import service from './service'
 
-Vue.prototype.axios = axios  //挂载到原型，可以全局使用
+// Vue.prototype.axios = axios  //挂载到原型，可以全局使用
+Vue.prototype.service = service  //挂载到原型，可以全局使用
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 new Vue({
