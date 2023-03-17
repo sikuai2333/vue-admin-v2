@@ -21,6 +21,11 @@ export default new Router({
       name: 'Home',
       component: Home,
     },
+    {
+      path: '*',
+      name: 'NotFound',
+      component:()=>import('../components/NotFound'),
+    }
   ],
   mode: 'history'
 })

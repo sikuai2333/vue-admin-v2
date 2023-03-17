@@ -96,9 +96,18 @@ export default {
   height: 100%;
   position: absolute;
   background-color: gray;
+  .el-card{
+    background: #657896;
+  }
   .box-card {
     width: 500px;
     margin: 200px auto;
+    background: #4f7abe;
+    // 无边框
+    border: none;
+    .label{
+      color: #fff
+    }
     .clearfix {
       font-size: 36px;
     }

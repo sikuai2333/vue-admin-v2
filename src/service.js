@@ -22,6 +22,7 @@ service.interceptors.response.use((response) => {
     if (status !== 200){
         Message({message:message || 'error' , type: 'warning'})
     }
+    console.log(response.data)
     return response
 }, (error) => {
     return Promise.reject(error)
