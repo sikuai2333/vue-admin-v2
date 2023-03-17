@@ -4,11 +4,11 @@
  * @Author: sikuai
  * @Date: 2023-03-15 19:27:53
  * @LastEditors: sikuai
- * @LastEditTime: 2023-03-16 08:44:18
+ * @LastEditTime: 2023-03-17 18:16:20
 //  封装校验用户名和token的js
 -->
 <template>
-  <div class="login">
+  <div class="login" :style="{ backgroundColor: bgColor }">
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span>后台管理登录</span>
@@ -45,6 +45,7 @@ export default {
 
   data() {
     return {
+      bgColor: getRandomColor(), // 初始化背景颜色
       form: {
         username: '',
         password: '',
@@ -56,21 +57,14 @@ export default {
     }
   },
   methods: {
+    changeColor() {
+      this.bgColor = getRandomColor() // 切换背景颜色
+    },
     login(form) {
       this.$refs[form].validate((valid) => {
         if (valid) {
           // 校验通过
           console.log(this.form)
-          // 此处调用封装的axios，但是又封装到api.js了
-          // this.service.post('/login', this.form)
-          // .then((res) => {
-          //   if (res.data.status === 200){
-          //     setToken('username',res.data.username)
-          //     setToken('token',res.data.token)
-          //     this.$message({message: res.data.message,type: 'success'})
-          //     this.$router.push('/home')
-          //   }
-          // })
           // 此处调用封装的api.js
           login(this.form).then(res => {
             if (res.data.status === 200) {
@@ -87,6 +81,16 @@ export default {
     }
   }
 }
+
+// 生成随机颜色的函数
+function getRandomColor() {
+  const letters = '0123456789ABCDEF'
+  let color = '#'
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)]
+  }
+  return color
+}
   </script>
     
   <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -95,18 +99,14 @@ export default {
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: gray;
-  .el-card{
-    background: #657896;
-  }
   .box-card {
     width: 500px;
     margin: 200px auto;
-    background: #4f7abe;
+    background: #fff;
     // 无边框
     border: none;
-    .label{
-      color: #fff
+    .label {
+      color: #fff;
     }
     .clearfix {
       font-size: 36px;

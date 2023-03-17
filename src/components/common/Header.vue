@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 39
+ * @Author: sikuai
+ * @Date: 2023-03-17 12:43:39
+ * @LastEditors: sikuai
+ * @LastEditTime: 2023-03-17 18:20:30
+-->
 <template>
   <div class="header">
     <el-header class="el-header">
@@ -28,7 +36,7 @@ export default {
 .header {
   .el-header {
     color: #fff;
-    background-color: blue;
+    background-color: gray;
     line-height: 60px;
     display: flex;
     justify-content: space-between;
