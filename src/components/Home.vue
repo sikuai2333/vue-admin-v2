@@ -13,7 +13,10 @@
       <Menu />
       <el-container>
         <el-main>
+            <Bread />
+          <div class="cont">
           <router-view></router-view>
+          </div>
         </el-main>
         <el-footer>
           <Footer />
@@ -27,12 +30,15 @@
 import Header from './common/Header.vue';
 import Footer from './common/Footer.vue';
 import Menu from './common/Menu.vue';
+// 导入面包屑
+import Bread from './common/Breadcrumb.vue'
 
 export default {
   components: {
     Header,
     Footer,
     Menu,
+    Bread,
   },
   data() {
     return {};
@@ -50,7 +56,9 @@ export default {
     width: 100%;
     top:60px;
     bottom: 0;
-    
+    .cont{
+      margin: 20px 0;
+    }
   }
 }
 </style>

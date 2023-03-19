@@ -12,7 +12,6 @@
       <!-- el-menu 要开启router，否则点击不跳转。此处跳转但是内容不变要在Home.vue中添加路由出口"router-view" -->
       <el-menu 
       router 
-      
       default-active="2" class="el-menu-vertical-demo" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
         <template v-for="(item,index) in menus">
           <el-submenu :index="index + ''" :key="index" v-if="!item.hidden">
@@ -61,6 +60,7 @@ export default {
     }
     .el-submenu .el-menu-item {
       min-width: 0;
+      margin-top: -10px;
       margin-left: 30px;
     }
   }
