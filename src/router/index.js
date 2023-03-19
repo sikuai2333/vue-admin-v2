@@ -9,11 +9,13 @@ export default new Router({
     {
       path: '/',
       redirect: '/login',
+      hidden: true, // 前端对路由进行隐藏
       component: () => import('../components/Login'),
     },
     {
       path: '/login',
       name: 'Login',
+      hidden: true,
       component: () => import('../components/Login'),
     },
     // {
@@ -25,6 +27,7 @@ export default new Router({
     {
       path: '*',
       name: 'NotFound',
+      hidden: true,
       component: () => import('../components/NotFound'),
     }, {
       path: '/home',
