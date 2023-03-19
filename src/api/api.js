@@ -9,3 +9,12 @@ export function login(data){
         data:data
     })
 }
+
+// 学生列表
+export function students(params){
+    return service({
+        method: 'get',
+        url: '/students',
+        data:params
+    })
+}
