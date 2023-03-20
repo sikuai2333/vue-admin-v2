@@ -15,6 +15,16 @@ export function students(params){
     return service({
         method: 'get',
         url: '/students',
-        data:params
+        params,
     })
 }
+
+// 学生列表删除接口
+export function studentDel(id){
+    return service({
+        method: 'delete',
+        url: `/students/${id}`,
+    })
+}
+
+// 学生列表查询重置接口和上面getData二次利用
